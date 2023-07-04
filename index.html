@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <!-- file awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- GOOGLE FONT FILE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&display=swap"
+        rel="stylesheet">
+
+    <title>Letter Message Email</title>
+
+    <!-- style css -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&display=swap');
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 90%;
+            margin: 0 auto;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        header {
+            /* background-color: blueviolet; */
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+
+        header .logo {
+            width: 40%;
+        }
+
+        header .logo img {
+            width: 100%;
+        }
+
+        nav {
+            background-color: #26748C;
+            padding: 10px;
+            width: 100%;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 90px;
+        }
+
+        nav ul li {
+            list-style: none;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.2em;
+            font-weight: 600;
+            transition: all 0.3s ease-in-out;
+            -webkit-transition: all 0.3s ease-in-out;
+            -moz-transition: all 0.3s ease-in-out;
+            -ms-transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover {
+            color: #D2BE73;
+        }
+
+        .container {
+            width: 700px;
+            overflow: hidden;
+            border: 15px solid #26748C;
+        }
+
+        .wrapper {
+            width: 100%;
+            display: flex;
+            animation: slide 16s infinite;
+        }
+
+
+        @keyframes slide {
+            0% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(0);
+            }
+
+            30% {
+                transform: translateX(-100%);
+            }
+
+            50% {
+                transform: translateX(-100%);
+            }
+
+            55% {
+                transform: translateX(-200%);
+            }
+
+            75% {
+                transform: translateX(-200%);
+            }
+
+            80% {
+                transform: translateX(-300%);
+            }
+
+            100% {
+                transform: translateX(-300%);
+            }
+        }
+
+        img {
+            width: 100%;
+        }
+
+        /* RESERVATION SECTION */
+        .reservation {
+            margin-top: 10px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            /* background-color: green; */
+            padding: 15px 0;
+        }
+
+        .circle {
+            background-color: #D2BE73;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+            position: relative;
+        }
+
+        .circle p {
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: 900;
+            color: #26748C;
+            position: absolute;
+            top: 20%;
+            left: -40%;
+            line-height: 50px;
+            letter-spacing: 2px;
+        }
+
+        .content {
+            width: 100%;
+            /* background-color: brown; */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            padding: 15px 0;
+        }
+
+        .content h3 {
+            color: #26748C;
+            font-size: 1.2em;
+            font-weight: 900;
+            line-height: 50px;
+            text-align: center;
+        }
+
+        .icon {
+            width: 100%;
+            /* background-color: orange; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 150px;
+        }
+
+        .more {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            text-align: center;
+        }
+
+        .more i {
+            background-color: #D2BE73;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+            text-align: center;
+            padding: 35%;
+            font-size: 2em;
+            color: #26748C;
+            transition: all 0.3s ease-in-out;
+            -webkit-transition: all 0.3s ease-in-out;
+            -moz-transition: all 0.3s ease-in-out;
+            -ms-transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .more i:hover {
+            background-color: #26748C;
+            color: #D2BE73;
+        }
+
+        .more a {
+            text-decoration: none;
+            font-size: 1em;
+            font-weight: 900;
+            color: #26748C;
+            letter-spacing: 2px;
+            transition: all 0.3s ease-in-out;
+            -webkit-transition: all 0.3s ease-in-out;
+            -moz-transition: all 0.3s ease-in-out;
+            -ms-transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+        }
+
+        .more a:hover {
+            scale: 1.2;
+        }
+
+        /* RESERVATION SECTION */
+        /* PAGE OFFRE SECTION*/
+        .pageOffre {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .pageOffre h1 {
+            font-size: 1.5em;
+            font-weight: 900;
+            color: #26748C;
+            letter-spacing: 2px;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .card-offre {
+            background-color: #D2BE73;
+            width: 19em;
+            height: 22em;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .pic {
+            width: 100%;
+            height: 100%;
+        }
+
+        .pic img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .content-offre {
+            padding: 0px 10px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: scale(1.2);
+            -webkit-transform: scale(1.2);
+            -moz-transform: scale(1.2);
+            -ms-transform: scale(1.2);
+            -o-transform: scale(1.2);
+        }
+
+        .content-offre a {
+            text-decoration: none;
+            color: #26748C;
+            font-size: 1.1em;
+        }
+
+        .content-offre a i {
+            margin-right: 10px;
+            font-size: 1em;
+        }
+
+        /* PAGE OFFRE SECTION*/
+
+        /* BANNER SECTION*/
+        .banner {
+            width: 100%;
+            /* height: 400px; */
+            background-color: #26748C;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            margin-top: 40px;
+            padding: 10px 0;
+        }
+
+        .ad-left {
+            width: 40%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            text-align: center;
+        }
+
+        .ad-left h3 {
+            font-size: 2em;
+            font-weight: 900;
+            color: #ffffff;
+        }
+
+        .ad-left h3 span {
+            color: #d2be74;
+        }
+
+        .ad-left a {
+            text-decoration: none;
+            /* background-color: #ffffff; */
+            padding: 15px 40px;
+            border-radius: 50px;
+            -webkit-border-radius: 50px;
+            -moz-border-radius: 50px;
+            -ms-border-radius: 50px;
+            -o-border-radius: 50px;
+            font-size: 1.5em;
+            font-weight: 900;
+            color: #26748C;
+            background: linear-gradient(to left, #d2be74 50%, lightblue 50%) right;
+            background-size: 200%;
+            transition: .5s ease-out;
+        }
+
+        .ad-left a:hover {
+            background-position: left;
+        }
+
+        .ad-right {
+            width: 40%;
+            height: 100%;
+        }
+
+        .ad-right img {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* BANNER SECTION */
+
+        /* SECTION GIFTS */
+        .gifts {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .gifts h1 {
+            text-align: center;
+            padding-top: 10px;
+            font-size: 1.5em;
+            font-weight: 900;
+            color: #26748C;
+            letter-spacing: 2px;
+        }
+
+        .cards-gifts {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .card-gift {
+            background-color: #D2BE73;
+            width: 19em;
+            height: 22em;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .pic-gift {
+            width: 100%;
+            height: 100%;
+        }
+
+        .pic-gift img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .content-gift {
+            padding: 0px 10px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: scale(1.2);
+            -webkit-transform: scale(1.2);
+            -moz-transform: scale(1.2);
+            -ms-transform: scale(1.2);
+            -o-transform: scale(1.2);
+        }
+
+        .content-gift a {
+            text-decoration: none;
+            color: #26748C;
+            font-size: 1.1em;
+        }
+
+        .content-gift a i {
+            margin-right: 10px;
+            font-size: 1em;
+        }
+
+        /* SECTION GIFTS */
+
+        /* FOOTER */
+
+        footer {
+            width: 100%;
+            /* height:100px; */
+            background-color: #fff;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            /* gap: 20px; */
+        }
+
+        .one,
+        .two,
+        .three {
+            width: 19em;
+            height: 15em;
+            text-align: center;
+            color: #26748C;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            font-size: 1em;
+        }
+
+        .one h1,
+        .two h1,
+        .three h1 {
+            font-size: 1em;
+        }
+
+        .one a,
+        .two a,
+        .three a {
+            text-decoration: none;
+            color: #26748C;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .one a i,
+        .two a i,
+        .three a i {
+            font-size: 1.4em;
+        }
+
+        .two a img {
+            width: 250px;
+            height: 80px;
+        }
+
+        .social {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        /* FOOTER */
+
+        @media (max-width:798px) {
+
+            /* HEADER */
+            nav ul li a {
+                font-size: 1em;
+            }
+
+            .container {
+                width: 600px;
+            }
+
+            .more i {
+                width: 90px;
+                height: 90px;
+                font-size: 1.5em;
+            }
+
+            /* HEADER */
+            /* RESEVATION SECTION */
+            .more a {
+                font-size: 0.9em;
+            }
+
+            /* RESEVATION SECTION */
+            /* BANNER SECTION */
+            .ad-left a {
+                padding: 10px 20px;
+                font-size: 1.2em;
+            }
+
+            /* BANNER SECTION */
+        }
+
+        @media (max-width:640px) {
+            .banner {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width:690px) {
+            .container {
+                width: 500px;
+            }
+
+            .icon {
+                gap: 50px;
+            }
+        }
+
+        @media (max-width:633px) {
+            nav ul li a {
+                font-size: 0.8em;
+            }
+        }
+
+        @media (max-width:573px) {
+            nav ul li a {
+                font-size: 0.6em;
+            }
+
+            .container {
+                width: 400px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="https://richexperience.sa/ar/p/xweo">المرشد السياحي</a></li>
+                <li><a href="https://richexperience.sa/ar/p/eVWD">الأخبار واللقاءات</a></li>
+                <li><a href="https://richexperience.sa/ar/p/xweo">دليل الطائف السياحي</a></li>
+            </ul>
+        </nav>
+        <div class="container">
+            <div class="wrapper">
+                <img src="images/1.jpg" alt="">
+                <img src="images/2.jpg" alt="">
+                <img src="images/3.jpg" alt="">
+                <img src="images/4.jpg" alt="">
+            </div>
+        </div>
+    </header>
+    <!-- HEADER -->
+
+    <!-- RESERVATION SECTION -->
+    <section class="reservation">
+        <span class="circle">
+            <p>مرحبًا بك في التجربة الثرية <br>لتنظيم الرحلات السياحية</p>
+        </span>
+        <div class="content">
+            <h3>نتكلف بتنظيم الرحلات الداخلية و بتنسيق الفنادق و تأمين خدمات السفر</h3>
+            <div class="icon">
+                <div class="more">
+                    <div><i class="fa-solid fa-magnifying-glass"></i></div>
+                    <a href="https://richexperience.sa/ar/p/bZyRX">تعرف على خدماتنا</a>
+                </div>
+                <div class="more">
+                    <div><i class="fa-solid fa-tag"></i></div>
+                    <a href="#">أفضل الأسعار</a>
+                </div>
+
+
+                <div class="more">
+                    <div><i class="fa-solid fa-phone"></i></div>
+                    <a href="https://richexperience.sa/ar/p/yXKR">اتصل بنا</a>
+                </div>
+
+            </div>
+        </div>
+
+
+    </section>
+    <!-- RESERVATION SECTION -->
+
+
+    <!-- /* PAGE OFFRE SECTION*/ -->
+    <section class="pageOffre">
+
+        <h1>أكثر عروضنا طلبا</h1>
+
+        <div class="cards">
+            <div class="card-offre">
+                <div class="pic">
+                    <img src="images/offre.jpg" alt="رحلة صيد">
+                </div>
+                <div class="content-offre">
+
+                    <a href="https://richexperience.sa/ar/ZbmAOP"><i class="fa-solid fa-arrow-left"></i>رحلة صيد</a>
+                </div>
+            </div>
+
+            <div class="card-offre">
+                <div class="pic">
+                    <img src="images/offre2.jpg" alt="رحلة جزيرة بياضه - جدة">
+                </div>
+                <div class="content-offre">
+
+                    <a href="https://richexperience.sa/ar/awopxZ"><i class="fa-solid fa-arrow-left"></i>رحلة جزيرة بياضه
+                        - جدة</a>
+                </div>
+            </div>
+
+
+
+            <div class="card-offre">
+                <div class="pic">
+                    <img src="images/offre3.jpg" alt="رحلة كروز السعودية">
+                </div>
+                <div class="content-offre">
+
+                    <a href="https://richexperience.sa/ar/ZWBzEm"><i class="fa-solid fa-arrow-left"></i>رحلة كروز
+                        السعودية</a>
+                </div>
+            </div>
+        </div>
+
+
+
+        </div>
+
+    </section>
+    <!-- /* PAGE OFFRE SECTION*/ -->
+
+    <!-- BANNER ADS -->
+    <section class="banner">
+        <div class="ad-left">
+            <h3><span>احجز الان </span> <br> و استفد <span>من </span> عروضنا</h3>
+            <a href="https://richexperience.sa/ar/category/ZXagl">ارغب في الحجز</a>
+        </div>
+
+
+        <div class="ad-right">
+            <img src="images/cadre.png" alt="cadre">
+        </div>
+    </section>
+    <!-- BANNER ADS -->
+
+    <!-- SECTION GIFTS -->
+    <section class="gifts">
+        <h1>متجر الهدايا </h1>
+        <div class="cards-gifts">
+            <div class="card-gift">
+                <div class="pic-gift">
+                    <img src="images/one.jpg" alt="بروش يوم تأسيس" />
+                </div>
+                <div class="content-gift">
+                    <a href="https://richexperience.sa/ar/rPvWWX"><i class="fa-solid fa-arrow-left"></i> بروش يوم
+                        تأسيس</a>
+                </div>
+            </div>
+
+            <div class="card-gift">
+                <div class="pic-gift">
+                    <img src="images/two.jpg" alt="مجسم حد الحرم" />
+                </div>
+                <div class="content-gift">
+                    <a href="https://richexperience.sa/ar/QnXNBV"><i class="fa-solid fa-arrow-left"></i> مجسم حد
+                        الحرم</a>
+                </div>
+            </div>
+
+            <div class="card-gift">
+                <div class="pic-gift">
+                    <img src="images/three.jpg" alt="بروش اليوم الوطني" />
+                </div>
+                <div class="content-gift">
+                    <a href="https://richexperience.sa/ar/lDBVBG"><i class="fa-solid fa-arrow-left"></i> بروش اليوم
+                        الوطني</a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- SECTION GIFTS -->
+
+
+    <!-- FOOTER  SECTION -->
+    <footer>
+
+        <div class="one">
+            <h1>تواصل معنا </h1>
+            <div class="icon-social">
+                <a href="https://richexperience.sa/ar/whatsapp/send"><i class="fa-brands fa-whatsapp"></i> 966504265634
+                    +</a>
+            </div>
+
+        </div>
+        <div class="two">
+            <h1>تحميل تطبيق الجوال</h1>
+            <a href="https://play.google.com/store/apps/details?id=tourguide.ahmad.aljuaed&hl=ar&pli=1"><i
+                    class="fa-brands fa-google-play"></i></a>
+        </div>
+
+        <div class="three">
+            <h1>تابعنا على المواقع الاجتماعية</h1>
+            <div class="social">
+                <a href="https://web.facebook.com/rihexp"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://twitter.com/rihexp"><i class="fa-brands fa-twitter"></i></i></a>
+                <a href="https://www.instagram.com/rihexp/"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@rihexp"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+
+        </div>
+
+    </footer>
+    <!-- FOOTER  SECTION -->
+
+</body>
+
+</html>
